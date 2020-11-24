@@ -26,6 +26,14 @@
     "build-storybook": "build-storybook",
     "postinstall": "./tasks/npm_post_install.sh"
   },
+  "lint-staged": {
+    "*.{scss,css,js,jsx,ts,php}": "npm run stylelint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@babel/runtime": "^7.10.2",
     "@babel/runtime-corejs3": "^7.10.2",
